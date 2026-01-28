@@ -16,6 +16,6 @@ fi
 
 #start apps
 flatpak run com.bitwarden.desktop >/dev/null 2>&1 &
-flatpak run dev.vencord.Vesktop >/dev/null> 2>&1 &
+flatpak run dev.vencord.Vesktop >/dev/null 2>&1 &
 flatpak run io.github.justinrdonnelly.bouncer >/dev/null 2>&1 &
 flatpak run com.github.zocker_160.SyncThingy >/dev/null 2>&1 &
