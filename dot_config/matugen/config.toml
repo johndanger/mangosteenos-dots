@@ -1,0 +1,26 @@
+[config]
+
+[templates.obsidian]
+input_path = '~/.config/matugen/templates/obsidian-minimal-matugen-colors.css'
+output_path = '~/.config/matugen/output/obsidian.css'
+
+[templates.helix]
+input_path = '~/.config/matugen/templates/helix.toml'
+output_path = '~/.config/helix/themes/dms.toml'
+
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/midnight-discord.css'
+output_path = '~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/dms.css'
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/dms.theme'
+
+[templates.mango]
+input_path = "~/.config/matugen/templates/mangowc.conf"
+output_path = "~/.config/mango/colors.conf"
+post_hook = "mmsg -d reload_config"
+
+[templates.zed]
+input_path = "~/.config/matugen/templates/zed-colors.json"
+output_path = "~/.config/zed/themes/dms.json"
