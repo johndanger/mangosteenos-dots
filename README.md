@@ -1,6 +1,6 @@
-# MangosteenOS dotfiles
+# mangosteenOS dotfiles
 
-Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/). Targets a Linux desktop with a Wayland-based setup and Material You theming.
+mangosteenOS dotfiles managed with [chezmoi](https://www.chezmoi.io/). mangosteenOS is a Universal Blue based image with Dank Material Shell.
 
 ## Overview
 
