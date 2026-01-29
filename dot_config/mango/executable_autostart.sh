@@ -6,7 +6,7 @@ set +e
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1 &
 
 # dms shell
-#dms run >/dev/null 2>&1 &
+dms run >/dev/null 2>&1 &
 
 # launch kdeconnect
 if [ -f /usr/bin/kdeconnect-indicator ]; then
