@@ -1,0 +1,52 @@
+{
+  "title": "kitty Keybinds",
+  "provider": "kitty",
+  "binds": {
+    "Window Management": [
+      {
+        "key": "Ctrl+Shft+enter",
+        "desc": "New Window"
+      },
+      {
+        "key": "Ctrl+Shift+]",
+        "desc": "Next Window"
+      },
+      {
+        "key": "Ctrl+Shift+[",
+        "desc": "Previous Window"
+      }
+    ],
+    "Layout Management": [
+      {
+        "key": "Ctrl+Shift+l",
+        "desc": "Next Layout"
+      },
+      {
+        "key": "Ctrl+Alt+r",
+        "desc": "Goto Layout Tall"
+      },
+      {
+        "key": "Ctrl+Alt+s",
+        "desc": "Goto Layout Stack"
+      }
+    ],
+    "Tab Management": [
+      {
+        "key": "Ctrl+Shift+t",
+        "desc": "New Tab"
+      },
+      {
+        "key": "Ctrl+Shift+right",
+        "desc": "Next Tab"
+      },
+      {
+        "key": "Ctrl+Shift+left",
+        "desc": "Previous Tab"
+      },
+      {
+        "key": "Ctrl+Shift+q",
+        "desc": "Close Tab"
+      }
+    ]
+  }
+}

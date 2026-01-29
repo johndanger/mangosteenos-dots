@@ -1,9 +1,0 @@
-# vim:fileencoding=utf-8:foldmethod=marker
-
-shell /usr/bin/zsh
-
-include dank-tabs.conf
-include dank-theme.conf
-
-map ctrl+shift+] next_tab
-map ctrl+shift+[ previous_tab 
