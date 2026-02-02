@@ -36,11 +36,11 @@
         "desc": "New Tab"
       },
       {
-        "key": "Ctrl+Shift+right",
+        "key": "Ctrl+Shift+>",
         "desc": "Next Tab"
       },
       {
-        "key": "Ctrl+Shift+left",
+        "key": "Ctrl+Shift+<",
         "desc": "Previous Tab"
       },
       {
