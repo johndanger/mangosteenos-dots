@@ -24,3 +24,11 @@ post_hook = "mmsg -d reload_config"
 [templates.zed]
 input_path = "~/.config/matugen/templates/zed-colors.json"
 output_path = "~/.config/zed/themes/dms.json"
+
+[templates.qutebrowser]
+input_path = "~/.config/matugen/templates/qutebrowser.py"
+output_path = "~/.config/qutebrowser/dms/setup.py"
+
+[templates.qutebrowser_init]
+input_path = "~/.config/matugen/templates/qutebrowser-init.py"
+output_path = "~/.config/qutebrowser/dms/__init__.py"
