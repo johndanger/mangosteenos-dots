@@ -191,6 +191,8 @@ zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<-
 autoload -U colors
 colors
 
+export PATH="$HOME/.local/bin:$PATH"
+
 #####################
 # Sourcing
 #####################
