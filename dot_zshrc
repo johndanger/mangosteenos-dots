@@ -8,6 +8,18 @@
 # functions, options, key bindings, etc.
 #
 
+# Prevent bash completion errors in zsh
+# Ensure we don't source bash completion files that cause errors
+if [[ -n "$ZSH_VERSION" ]]; then
+    # Override any functions that might try to source bash completions
+    function _comp_deprecate_func() { return 0; }
+    function _comp_deprecate_var() { return 0; }
+
+    # Prevent bash completion directory from being processed
+    unset BASH_COMPLETION_COMPAT_DIR 2>/dev/null
+    unset BASH_COMPLETION_USER_FILE 2>/dev/null
+fi
+
 # for profiling zsh
 # https://unix.stackexchange.com/a/329719/27109
 #
@@ -16,6 +28,9 @@
 #
 # Completions
 #
+
+# Don't reinitialize completions since system already handles this
+# Just ensure our fpath is set up properly before oh-my-zsh loads
 
 # load brew autocomplete
 if [ -d "/home/linuxbrew/.linuxbrew/share/zsh/site-functions" ]; then
@@ -212,8 +227,8 @@ fi
 #####################
 
 # Load user zsh scripts
-if [ -d $ZSHCONFIG ]; then
-  for f in $ZSHCONFIG/**/*.*sh
+if [ -d "$ZSHCONFIG" ]; then
+  for f in "$ZSHCONFIG"/**/*.*sh
   do
       source "$f"
   done
