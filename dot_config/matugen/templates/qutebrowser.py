@@ -222,9 +222,9 @@ def setup(c, samecolorrows=False):
     c.colors.tabs.odd.bg = palette["surface1"]
 
     ## Foreground color of unselected even tabs.
-    c.colors.tabs.even.fg = palette["overlay2"]
+    c.colors.tabs.even.fg = palette["sky"]
     ## Foreground color of unselected odd tabs.
-    c.colors.tabs.odd.fg = palette["overlay2"]
+    c.colors.tabs.odd.fg = palette["sky"]
 
     ## Color for the tab indicator on errors.
     c.colors.tabs.indicator.error = palette["red"]
@@ -242,9 +242,9 @@ def setup(c, samecolorrows=False):
     c.colors.tabs.selected.odd.bg = palette["base"]
 
     # ## Foreground color of selected even tabs.
-    c.colors.tabs.selected.even.fg = palette["text"]
+    c.colors.tabs.selected.even.fg = palette["blue"]
     # ## Foreground color of selected odd tabs.
-    c.colors.tabs.selected.odd.fg = palette["text"]
+    c.colors.tabs.selected.odd.fg = palette["blue"]
     # {{"}}}"}}
 
     # context menus {{"{{{"}}
