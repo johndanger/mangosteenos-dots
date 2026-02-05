@@ -104,7 +104,7 @@ def setup(c, samecolorrows=False):
 
     # keyhints {{"{{{"}}
     ## Background color of the keyhint widget.
-    c.colors.keyhint.bg = palette["green"]
+    c.colors.keyhint.bg = palette["surface2"]
 
     ## Text color for the keyhint widget.
     c.colors.keyhint.fg = palette["text"]
@@ -115,11 +115,11 @@ def setup(c, samecolorrows=False):
 
     # messages {{"{{{"}}
     ## Background color of an error message.
-    c.colors.messages.error.bg = palette["overlay0"]
+    c.colors.messages.error.bg = palette["surface0"]
     ## Background color of an info message.
-    c.colors.messages.info.bg = palette["overlay0"]
+    c.colors.messages.info.bg = palette["surface0"]
     ## Background color of a warning message.
-    c.colors.messages.warning.bg = palette["overlay0"]
+    c.colors.messages.warning.bg = palette["surface0"]
 
     ## Border color of an error message.
     c.colors.messages.error.border = palette["mantle"]
@@ -254,6 +254,6 @@ def setup(c, samecolorrows=False):
     c.colors.contextmenu.disabled.bg = palette["mantle"]
     c.colors.contextmenu.disabled.fg = palette["overlay0"]
 
-    c.colors.contextmenu.selected.bg = palette["overlay0"]
-    c.colors.contextmenu.selected.fg = palette["rosewater"]
+    c.colors.contextmenu.selected.bg = palette["crust"]
+    c.colors.contextmenu.selected.fg = palette["subtext1"]
     # {{"}}}"}}
