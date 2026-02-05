@@ -12,3 +12,5 @@ c.colors.webpage.darkmode.enabled = True
 
 # save tabs
 c.auto_save.session = True
+
+c.content.blocking.method = 'both'
