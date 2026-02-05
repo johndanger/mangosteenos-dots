@@ -234,7 +234,7 @@ def setup(c, samecolorrows=False):
     ##	 - hsv: Interpolate in the HSV color system.
     ##	 - hsl: Interpolate in the HSL color system.
     ##	 - none: Don't show a gradient.
-    c.colors.tabs.indicator.system = "none"
+    c.colors.tabs.indicator.system = "rgb"
 
     # ## Background color of selected even tabs.
     c.colors.tabs.selected.even.bg = palette["base"]
