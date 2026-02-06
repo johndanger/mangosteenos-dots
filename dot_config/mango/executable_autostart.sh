@@ -8,10 +8,16 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 # dms shell
 dms run >/dev/null 2>&1 &
 
-# launch kdeconnect
-if [ -f /usr/bin/kdeconnect-indicator ]; then
-   kdeconnectd >/dev/null 2>&1 &
-   kdeconnect-indicator >/dev/null 2>&1 &
+# launch kdeconnect if user wants it
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/mangosteenos/skip-kdeconnect" ]; then
+   echo "Skipping kdeconnect"
+else 
+   if [ -f /usr/bin/kdeconnect-indicator ]; then
+      kdeconnectd >/dev/null 2>&1 &
+      kdeconnect-indicator >/dev/null 2>&1 &
+   else
+      echo "kdeconnect-indicator not found"
+   fi
 fi
 
 #start apps
