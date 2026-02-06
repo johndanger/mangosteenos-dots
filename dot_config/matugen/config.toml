@@ -33,10 +33,6 @@ output_path = "~/.config/qutebrowser/dms/setup.py"
 input_path = "~/.config/matugen/templates/qutebrowser-init.py"
 output_path = "~/.config/qutebrowser/dms/__init__.py"
 
-[templates.halloy_dark]
-input_path = "~/.config/matugen/templates/halloy-matugen-dark.toml"
-output_path = "~/.var/app/org.squidowl.halloy/config/halloy/themes/matugen-dark.toml"
-
-[templates.halloy_light]
-input_path = "~/.config/matugen/templates/halloy-matugen-light.toml"
-output_path = "~/.var/app/org.squidowl.halloy/config/halloy/themes/matugen-light.toml"
+[templates.halloy]
+input_path = "~/.config/matugen/templates/halloy-matugen.toml"
+output_path = "~/.var/app/org.squidowl.halloy/config/halloy/themes/dms.toml"
