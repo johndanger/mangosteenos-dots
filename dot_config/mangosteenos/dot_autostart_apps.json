@@ -4,6 +4,7 @@
     { "type": "flatpak", "id": "com.bitwarden.desktop" },
     { "type": "flatpak", "id": "dev.vencord.Vesktop" },
     { "type": "flatpak", "id": "io.github.justinrdonnelly.bouncer" },
-    { "type": "flatpak", "id": "com.github.zocker_160.SyncThingy" }
+    { "type": "flatpak", "id": "com.github.zocker_160.SyncThingy" },
+    { "type": "flatpak", "id": "org.squidowl.halloy" }
   ]
 }
