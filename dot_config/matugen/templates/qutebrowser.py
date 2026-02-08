@@ -92,25 +92,25 @@ def setup(c, samecolorrows=False):
     ## for transparency.
     c.colors.hints.bg = palette["teal"]
 
-    ## Font color for hints.
-    c.colors.hints.fg = palette["surface1"]
+    ## Font color for hints (must contrast with hint bg).
+    c.colors.hints.fg = palette["text"]
 
     ## Hints
-    c.hints.border = "1px solid " + palette["surface1"]
+    c.hints.border = "1px solid " + palette["overlay2"]
 
     ## Font color for the matched part of hints.
-    c.colors.hints.match.fg = palette["subtext1"]
+    c.colors.hints.match.fg = palette["text"]
     # {{"}}}"}}
 
     # keyhints {{"{{{"}}
     ## Background color of the keyhint widget.
     c.colors.keyhint.bg = palette["surface2"]
 
-    ## Text color for the keyhint widget.
-    c.colors.keyhint.fg = palette["surface1"]
+    ## Text color for the keyhint widget (must contrast with keyhint bg).
+    c.colors.keyhint.fg = palette["text"]
 
     ## Highlight color for keys to complete the current keychain.
-    c.colors.keyhint.suffix.fg = palette["subtext1"]
+    c.colors.keyhint.suffix.fg = palette["green"]
     # {{"}}}"}}
 
     # messages {{"{{{"}}
