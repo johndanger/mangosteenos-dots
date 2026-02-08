@@ -1,0 +1,25 @@
+# When dotfiles are merged to main, trigger a build of the bootc image so the
+# image picks up the latest dotfiles. Requires repo secrets in this repo:
+#   BOOTC_IMAGE_REPO - e.g. "johndanger/bootc_image"
+#   BOOTC_IMAGE_PAT  - PAT with repo scope (or fine-grained: contents read+write) on the bootc repo
+---
+name: Trigger bootc image build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  trigger-build:
+    name: Trigger bootc image build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository dispatch
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.BOOTC_IMAGE_PAT }}
+          repository: ${{ secrets.BOOTC_IMAGE_REPO }}
+          event-type: dotfiles-updated
+          client-payload: '{"dotfiles_ref": "${{ github.sha }}", "dotfiles_repo": "${{ github.repository }}"}'
