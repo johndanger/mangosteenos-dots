@@ -28,3 +28,9 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+[".config/DankMaterialShell/plugins/dankBitwarden"]
+    type = "git-repo"
+    url = "https://github.com/Pacman99/DankBitwarden.git"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
