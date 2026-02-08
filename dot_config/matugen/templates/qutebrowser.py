@@ -103,8 +103,9 @@ def setup(c, samecolorrows=False):
     # {{"}}}"}}
 
     # keyhints {{"{{{"}}
-    ## Background color of the keyhint widget.
-    c.colors.keyhint.bg = palette["surface2"]
+    ## Background color of the keyhint widget (use base so it stays dark in dark
+    ## mode and text stays legible).
+    c.colors.keyhint.bg = palette["base"]
 
     ## Text color for the keyhint widget (must contrast with keyhint bg).
     c.colors.keyhint.fg = palette["text"]
