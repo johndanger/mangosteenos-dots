@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 config.load_autoconfig()
 
@@ -7,8 +8,32 @@ if os.path.exists(config.configdir / "dms/__init__.py"):
 
     setup(c)
 
-# enable dark mode
-c.colors.webpage.darkmode.enabled = True
+
+def _dms_theme_mode():
+    """Get current theme mode from Dank Linux (dms) IPC. Returns 'dark', 'light', or None."""
+    try:
+        r = subprocess.run(
+            ["dms", "ipc", "call", "theme", "getMode"],
+            capture_output=True,
+            text=True,
+            timeout=2,
+        )
+        if r.returncode == 0 and r.stdout:
+            return r.stdout.strip().lower()
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        pass
+    return None
+
+
+# Sync webpage dark mode with DMS theme (dark = enable, light = disable)
+_dms_mode = _dms_theme_mode()
+if _dms_mode == "dark":
+    c.colors.webpage.darkmode.enabled = True
+elif _dms_mode == "light":
+    c.colors.webpage.darkmode.enabled = False
+else:
+    # DMS not available or unknown; default to dark
+    c.colors.webpage.darkmode.enabled = True
 
 # save tabs
 c.auto_save.session = True

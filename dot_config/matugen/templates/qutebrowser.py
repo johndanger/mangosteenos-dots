@@ -93,10 +93,10 @@ def setup(c, samecolorrows=False):
     c.colors.hints.bg = palette["teal"]
 
     ## Font color for hints.
-    c.colors.hints.fg = palette["mantle"]
+    c.colors.hints.fg = palette["surface1"]
 
     ## Hints
-    c.hints.border = "1px solid " + palette["mantle"]
+    c.hints.border = "1px solid " + palette["surface1"]
 
     ## Font color for the matched part of hints.
     c.colors.hints.match.fg = palette["subtext1"]
@@ -107,7 +107,7 @@ def setup(c, samecolorrows=False):
     c.colors.keyhint.bg = palette["surface2"]
 
     ## Text color for the keyhint widget.
-    c.colors.keyhint.fg = palette["text"]
+    c.colors.keyhint.fg = palette["surface1"]
 
     ## Highlight color for keys to complete the current keychain.
     c.colors.keyhint.suffix.fg = palette["subtext1"]
@@ -222,9 +222,9 @@ def setup(c, samecolorrows=False):
     c.colors.tabs.odd.bg = palette["surface1"]
 
     ## Foreground color of unselected even tabs.
-    c.colors.tabs.even.fg = palette["sky"]
+    c.colors.tabs.even.fg = palette["text"]
     ## Foreground color of unselected odd tabs.
-    c.colors.tabs.odd.fg = palette["sky"]
+    c.colors.tabs.odd.fg = palette["text"]
 
     ## Color for the tab indicator on errors.
     c.colors.tabs.indicator.error = palette["red"]
@@ -242,9 +242,9 @@ def setup(c, samecolorrows=False):
     c.colors.tabs.selected.odd.bg = palette["base"]
 
     # ## Foreground color of selected even tabs.
-    c.colors.tabs.selected.even.fg = palette["blue"]
+    c.colors.tabs.selected.even.fg = palette["text"]
     # ## Foreground color of selected odd tabs.
-    c.colors.tabs.selected.odd.fg = palette["blue"]
+    c.colors.tabs.selected.odd.fg = palette["text"]
     # {{"}}}"}}
 
     # context menus {{"{{{"}}

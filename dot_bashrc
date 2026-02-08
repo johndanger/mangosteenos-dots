@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# vim:syntax=bash
+# vim:filetype=bash
+
+#
+# .bashrc is sourced in interactive shells.
+# It should contain commands to set up aliases,
+# functions, options, key bindings, etc.
+#
+
+#
+# Variables
+#
+#
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# aliases
+alias ls=eza
+alias vim=nvim
+alias cat=bat
+
+#####################
+# Sourcing
+#####################
+
+# Brew
+if [[ -n "$PS1" ]] && [[ -d /home/linuxbrew/.linuxbrew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  if type brew &>/dev/null; then
+    if [[ -w /home/linuxbrew/.linuxbrew ]]; then
+      if [[ ! -L "$(brew --prefix)/share/bash-completion/completions/brew" ]]; then
+        brew completions link &>/dev/null
+      fi
+    fi
+  fi
+fi
+
+#####################
+# Prompt (before user config so it always runs; starship re-applied after so it wins)
+#####################
+
+if command -v atuin &>/dev/null; then
+  eval "$(atuin init bash)"
+fi
+if command -v starship &>/dev/null; then
+  eval "$(starship init bash)"
+fi
+
+#####################
+# User configuration
+#####################
+
+# Load user bash scripts (BASHCONFIG or ZSHCONFIG for shared config dir)
+if [ -d "${BASHCONFIG:-$ZSHCONFIG}" ]; then
+  _cfg="${BASHCONFIG:-$ZSHCONFIG}"
+  shopt -s nullglob globstar
+  for f in "$_cfg"/**/*.*sh; do
+    [[ -f "$f" ]] && source "$f"
+  done
+  shopt -u nullglob globstar 2>/dev/null || true
+fi
+
+# Re-apply Starship so user config can't overwrite the prompt
+if command -v starship &>/dev/null; then
+  eval "$(starship init bash)"
+fi

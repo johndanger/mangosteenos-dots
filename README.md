@@ -7,7 +7,7 @@ mangosteenOS dotfiles managed with [chezmoi](https://www.chezmoi.io/). mangostee
 | Component | Purpose |
 |-----------|---------|
 | **Helix** | Terminal editor (`~/.config/helix/`) — config and DMS theme |
-| **Kitty** | Terminal emulator (`~/.config/kitty/`) — themes (Noctalia, Dank), tabs, and main config |
+| **Kitty** | Terminal emulator (`~/.config/kitty/`) — main config, tabs; theme in `current-theme.conf` (matugen-generated, follows light/dark) |
 | **Mango** | Wayland compositor (`~/.config/mango/`) — binds, colors, layout, autostart, rules, and scripts (screenshot, snip) |
 | **Matugen** | Material You theming (`~/.config/matugen/`) — generates theme outputs for Helix, Btop, Vesktop, Mango, Zed, Obsidian, Halloy |
 | **Starship** | Shell prompt (`~/.config/starship.toml`) |
@@ -60,6 +60,7 @@ Run `chezmoi update` (or re-apply) to refresh these when needed.
 Matugen is configured to produce “DMS” (Material You) themes for:
 
 - Helix → `~/.config/helix/themes/dms.toml`
+- **Kitty** → `~/.config/kitty/current-theme.conf` (follows light/dark; template uses `.default` variants)
 - Btop → `~/.config/btop/themes/dms.theme`
 - Vesktop → `~/.var/app/dev.vencord.Vesktop/config/vesktop/themes/dms.css`
 - Mango → `~/.config/mango/colors.conf` (with `mmsg -d reload_config` post-hook)
@@ -68,6 +69,8 @@ Matugen is configured to produce “DMS” (Material You) themes for:
 - Halloy → `~/.config/halloy/themes/matugen-dark.toml` and `matugen-light.toml` (use `theme = { dark = "matugen-dark", light = "matugen-light" }` for OS sync)
 
 Templates live in `dot_config/matugen/templates/`. Run matugen according to its own docs to regenerate after changing scheme or templates.
+
+**Kitty and light/dark:** If Kitty stays dark in light mode, turn off **"Terminals – Always use Dark Theme"** in DMS: open **Settings → Theme & Colors** (or equivalent) and disable that option so terminal templates use mode-aware colors.
 
 ## Mango compositor
 

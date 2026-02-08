@@ -1,0 +1,3 @@
+# Login shell: run .bashrc so we get prompt, aliases, PATH, etc.
+# (Bash only auto-sources .bashrc for interactive *non-login* shells.)
+[[ -f ~/.bashrc ]] && source ~/.bashrc
