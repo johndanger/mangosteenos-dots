@@ -14,3 +14,7 @@ c.colors.webpage.darkmode.enabled = True
 c.auto_save.session = True
 
 c.content.blocking.method = 'both'
+
+config.bind('xs', 'config-cycle statusbar.show always never')
+config.bind('xt', 'config-cycle tabs.show always never')
+config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.show always never')
