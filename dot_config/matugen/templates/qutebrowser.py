@@ -1,7 +1,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 
-def setup(c, samecolorrows=False):
+def setup(c, samecolorrows=False, mode=None):
     # Qutebrowser color scheme using Matugen template variables
     palette = {
         # Map Material You colors to Catppuccin-style names for compatibility
@@ -88,12 +88,13 @@ def setup(c, samecolorrows=False):
     # {{"}}}"}}
 
     # hints {{"{{{"}}
-    ## Background color for hints. Note that you can use a `rgba(...)` value
-    ## for transparency.
-    c.colors.hints.bg = palette["teal"]
-
-    ## Font color for hints (must contrast with hint bg).
-    c.colors.hints.fg = palette["text"]
+    ## Palette keys chosen by mode so hint bg/fg contrast (mode from dms IPC).
+    if mode == "light":
+        c.colors.hints.bg = palette["blue"]
+        c.colors.hints.fg = palette["mantle"]
+    else:
+        c.colors.hints.bg = palette["teal"]
+        c.colors.hints.fg = palette["mantle"]
 
     ## Hints
     c.hints.border = "1px solid " + palette["overlay2"]
@@ -103,15 +104,14 @@ def setup(c, samecolorrows=False):
     # {{"}}}"}}
 
     # keyhints {{"{{{"}}
-    ## Background: use same teal as link hints so keyhint is a distinct box and
-    ## stays dark in dark mode (base/surface can render too light with Qt).
-    c.colors.keyhint.bg = palette["teal"]
-
-    ## Text color for the keyhint widget (must contrast with keyhint bg).
-    c.colors.keyhint.fg = palette["text"]
-
-    ## Highlight color for keys to complete the current keychain.
-    c.colors.keyhint.suffix.fg = palette["green"]
+    if mode == "light":
+        c.colors.keyhint.bg = palette["surface2"]
+        c.colors.keyhint.fg = palette["text"]
+        c.colors.keyhint.suffix.fg = palette["green"]
+    else:
+        c.colors.keyhint.bg = palette["teal"]
+        c.colors.keyhint.fg = palette["mantle"]
+        c.colors.keyhint.suffix.fg = palette["green"]
     # {{"}}}"}}
 
     # messages {{"{{{"}}

@@ -3,11 +3,6 @@ import subprocess
 
 config.load_autoconfig()
 
-if os.path.exists(config.configdir / "dms/__init__.py"):
-    from dms import setup
-
-    setup(c)
-
 
 def _dms_theme_mode():
     """Get current theme mode from Dank Linux (dms) IPC. Returns 'dark', 'light', or None."""
@@ -24,8 +19,19 @@ def _dms_theme_mode():
         pass
     return None
 
+if os.path.exists(config.configdir / "dms/__init__.py"):
+    from dms import setup
 
-# Sync webpage dark mode with DMS theme (dark = enable, light = disable)
+    mode = _dms_theme_mode()
+    try:
+        setup(c, mode=mode)
+    except TypeError:
+        setup(c)
+
+
+# Sync webpage dark mode with DMS theme (dark = enable, light = disable).
+# Keyhint colors come from the dms/matugen theme (setup(c) above) using
+# Material You semantic colors that contrast properly in both light and dark themes.
 _dms_mode = _dms_theme_mode()
 if _dms_mode == "dark":
     c.colors.webpage.darkmode.enabled = True
