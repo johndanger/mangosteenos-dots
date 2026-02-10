@@ -243,9 +243,9 @@ def setup(c, samecolorrows=False, mode=None):
     c.colors.tabs.selected.odd.bg = palette["base"]
 
     # ## Foreground color of selected even tabs.
-    c.colors.tabs.selected.even.fg = palette["text"]
+    c.colors.tabs.selected.even.fg = palette["blue"]
     # ## Foreground color of selected odd tabs.
-    c.colors.tabs.selected.odd.fg = palette["text"]
+    c.colors.tabs.selected.odd.fg = palette["blue"]
     # {{"}}}"}}
 
     # context menus {{"{{{"}}
