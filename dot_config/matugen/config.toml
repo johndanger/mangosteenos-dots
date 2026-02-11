@@ -36,3 +36,8 @@ output_path = "~/.config/qutebrowser/dms/__init__.py"
 [templates.halloy]
 input_path = "~/.config/matugen/templates/halloy-matugen.toml"
 output_path = "~/.var/app/org.squidowl.halloy/config/halloy/themes/dms.toml"
+
+[template.tmux]
+input_path = "~/.config/matugen/templates/tmux-colors.conf"
+output_path = "~/.config/tmux/dms-colors.conf"
+
