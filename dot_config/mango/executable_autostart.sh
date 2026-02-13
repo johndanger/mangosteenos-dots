@@ -7,9 +7,10 @@ AUTOSTART_JSON="${XDG_CONFIG_HOME:-$HOME/.config}/mangosteenos/.autostart_apps.j
 # Export env for systemd user units (D-Bus activation, DMS, etc.)
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1 &
 
-# Start graphical session target so systemd user services (dms, udiskie, etc.) start.
-# Don't run "dms run" here when using systemd or you'll get two instances.
-systemctl --user start graphical-session.target
+# Start our session target so systemd user services (dms, udiskie, etc.) start.
+# With greetd + mangowc, graphical-session.target is never started, so we use
+# mangowc-session.target and start it here once the compositor is up.
+systemctl --user start mangowc-session.target
 
 # launch kdeconnect if user wants it
 if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/mangosteenos/skip-kdeconnect" ]; then
