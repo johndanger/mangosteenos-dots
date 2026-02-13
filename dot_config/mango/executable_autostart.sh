@@ -7,14 +7,8 @@ AUTOSTART_JSON="${XDG_CONFIG_HOME:-$HOME/.config}/mangosteenos/.autostart_apps.j
 # Export env for systemd user units (D-Bus activation, DMS, etc.)
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1 &
 
-# Start graphical session target so systemd user services (dms, udiskie, etc.) start.
-# With greetd + mangowc nothing starts this target by default; starting it here makes
-# enabled services that are WantedBy=graphical-session.target start. Do not run
-# "dms run" here or you get two instances.
-systemctl --user start graphical-session.target >/dev/null 2>&1 &
-
 # dms
-# dms run >/dev/null 2>&1 &
+dms run >/dev/null 2>&1 &
 
 # launch kdeconnect if user wants it
 if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/mangosteenos/skip-kdeconnect" ]; then
