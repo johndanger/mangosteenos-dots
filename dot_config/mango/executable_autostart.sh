@@ -11,7 +11,7 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 # With greetd + mangowc nothing starts this target by default; starting it here makes
 # enabled services that are WantedBy=graphical-session.target start. Do not run
 # "dms run" here or you get two instances.
-systemctl --user start graphical-session.target &
+systemctl --user start graphical-session.target >/dev/null 2>&1 &
 
 # dms
 # dms run >/dev/null 2>&1 &
