@@ -5,7 +5,7 @@ set +e
 AUTOSTART_JSON="${XDG_CONFIG_HOME:-$HOME/.config}/mangosteenos/.autostart_apps.json"
 
 # dms
-dms run >/dev/null 2>&1 &
+#dms run >/dev/null 2>&1 &
 
 # launch kdeconnect if user wants it
 if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/mangosteenos/skip-kdeconnect" ]; then
