@@ -41,3 +41,6 @@ output_path = "~/.var/app/org.squidowl.halloy/config/halloy/themes/dms.toml"
 input_path = "~/.config/matugen/templates/tmux-colors.conf"
 output_path = "~/.config/tmux/dms-colors.conf"
 
+[templates.opencode]
+input_path = '~/.config/matugen/templates/opencode-colors.json'
+output_path = '~/.config/opencode/themes/dms.json'
