@@ -34,3 +34,10 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+[".config/DankMaterialShell/plugins/DankKDEConnect"]
+    type = "archive"
+    url = "https://github.com/AvengeMedia/dms-plugins/archive/master.tar.gz"
+    exact = true
+    stripComponents = 2
+    include = ["*/DankKDEConnect/**"]
+    refreshPeriod = "168h"
