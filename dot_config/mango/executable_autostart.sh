@@ -9,14 +9,9 @@ AUTOSTART_JSON="${XDG_CONFIG_HOME:-$HOME/.config}/mangosteenos/.autostart_apps.j
 
 # launch kdeconnect if user wants it
 if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/mangosteenos/skip-kdeconnect" ]; then
-   echo "Skipping kdeconnect"
+    echo "Skipping kdeconnect"
 else
-   if [ -f /usr/bin/kdeconnect-indicator ]; then
-      kdeconnectd >/dev/null 2>&1 &
-      kdeconnect-indicator >/dev/null 2>&1 &
-   else
-      echo "kdeconnect-indicator not found"
-   fi
+    kdeconnectd >/dev/null 2>&1 &
 fi
 
 # Launch apps from JSON config (flatpak or executable in PATH)
