@@ -37,14 +37,14 @@ if [[ -n "$PS1" ]] && [[ -d /home/linuxbrew/.linuxbrew ]]; then
 fi
 
 #####################
-# Prompt (before user config so it always runs; starship re-applied after so it wins)
+# Prompt
 #####################
 
-if command -v atuin &>/dev/null; then
-  eval "$(atuin init bash)"
-fi
 if command -v starship &>/dev/null; then
   eval "$(starship init bash)"
+fi
+if command -v atuin &>/dev/null; then
+  eval "$(atuin init bash)"
 fi
 
 #####################
@@ -59,9 +59,4 @@ if [ -d "${BASHCONFIG:-$ZSHCONFIG}" ]; then
     [[ -f "$f" ]] && source "$f"
   done
   shopt -u nullglob globstar 2>/dev/null || true
-fi
-
-# Re-apply Starship so user config can't overwrite the prompt
-if command -v starship &>/dev/null; then
-  eval "$(starship init bash)"
 fi
