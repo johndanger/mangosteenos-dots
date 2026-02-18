@@ -32,7 +32,6 @@ output_path = "~/.config/qutebrowser/dms/__init__.py"
 [templates.qutebrowser]
 input_path = "~/.config/matugen/templates/qutebrowser.py"
 output_path = "~/.config/qutebrowser/dms/setup.py"
-post_hook = "qutebrowser --nowindow --no-err-windows :config-source"
 
 [templates.halloy]
 input_path = "~/.config/matugen/templates/halloy-matugen.toml"
