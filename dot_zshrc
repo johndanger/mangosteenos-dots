@@ -200,7 +200,7 @@ alias cat=bat
 #####################
 
 # Brew
-if [[ -o interactive ]] && [[ -d /home/linuxbrew/.linuxbrew ]]; then
+if [[ -o interactive ]] && [[ -d /home/linuxbrew/.linuxbrew ]] && [[ "$PATH" != *"linuxbrew"* ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   if type brew &>/dev/null; then
     if [[ -w /home/linuxbrew/.linuxbrew ]]; then
