@@ -32,6 +32,7 @@ output_path = "~/.config/qutebrowser/dms/__init__.py"
 [templates.qutebrowser]
 input_path = "~/.config/matugen/templates/qutebrowser.py"
 output_path = "~/.config/qutebrowser/dms/setup.py"
+post_hook = "qutebrowser --nowindow :config-source"
 
 [templates.halloy]
 input_path = "~/.config/matugen/templates/halloy-matugen.toml"
@@ -44,3 +45,8 @@ output_path = "~/.config/tmux/dms-colors.conf"
 [templates.opencode]
 input_path = '~/.config/matugen/templates/opencode-colors.json'
 output_path = '~/.config/opencode/themes/dms.json'
+
+[templates.weechat]
+input_path = '~/.config/matugen/templates/weechat.theme'
+output_path = '~/.config/weechat/themes/dms.theme'
+post_hook = "python3 ~/.config/matugen/weechat-hex-to-256.py ~/.config/weechat/themes/dms.theme"
