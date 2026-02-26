@@ -37,6 +37,7 @@ post_hook = "qutebrowser --nowindow :config-source"
 [templates.halloy]
 input_path = "~/.config/matugen/templates/halloy-matugen.toml"
 output_path = "~/.var/app/org.squidowl.halloy/config/halloy/themes/dms.toml"
+post_hook = 'pkill -u "$USER" --signal=SIGUSR1 ^halloy$'
 
 [templates.tmux]
 input_path = "~/.config/matugen/templates/tmux-colors.conf"
